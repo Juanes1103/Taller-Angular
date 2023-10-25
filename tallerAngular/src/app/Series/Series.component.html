@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="col-5">
+        <div id="Average"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="h3"> # </th>
+                    <th class="h3"> Name </th>
+                    <th class="h3"> Channel </th>
+                    <th class="h3"> Seasons </th>
+                    <th class="h3"> Sinopsis </th>
+                    <th class="h3"> Link </th>
+                    <th class="h3"> Image </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let c of series">
+                    <td>
+                        <dd>{{c.id}}</dd>
+                    </td>
+                    <td>
+                        <dd><a href='{{c.link}}'>{{c.name}}</a></dd>
+                    </td>
+                    <td>
+                        <dd>{{c.channel}}</dd>
+                    </td>
+                    <td>
+                        <dd>{{c.seasons}}</dd>
+                    </td>
+                    <td>
+                        <dd>{{c.sipnosis}}</dd>
+                    </td>
+                    <td>
+                        <dd><a href='{{c.link}}'>{{c.link}}</a></dd>
+                    </td>
+                    <td>
+                        <dd>{{c.foto}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-7">
+        Seasons Average: {{average}}
+    </div>
+</div>
