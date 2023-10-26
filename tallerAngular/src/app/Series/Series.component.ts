@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import {Serie} from './Series'
+import { dataSerie } from "./data";
 import { ServiceSerie } from "./ServiceSerie";
 
 @Component({
-    selector: 'app-Series',
+    selector: 'app-series',
     templateUrl: './Series.component.html',
     styleUrls: ['./Series.component.css']
 })
@@ -16,6 +17,11 @@ export class SeriesComponent implements OnInit {
     average: number=0
 
     getSeriesList(){
+        this.serieService.getSeries().subscribe(series=>{this.series = series});
+        this.getSeasonsAverage();
+    }
+
+    getSeasonsAverage(){
         this.serieService.getSeries().subscribe(series=>{
             series.forEach(serie=>this.seasons+=serie.seasons);
             this.average=this.seasons/series.length;
